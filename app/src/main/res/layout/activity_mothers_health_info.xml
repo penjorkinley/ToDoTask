@@ -1,0 +1,980 @@
+<?xml version="1.0" encoding="utf-8"?>
+<ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".MothersHealthInfo">
+
+
+    <RelativeLayout
+        android:layout_width="409dp"
+        android:layout_height="729dp"
+        tools:layout_editor_absoluteX="1dp"
+        tools:layout_editor_absoluteY="1dp">
+
+        <TextView
+            android:id="@+id/topic"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="@string/mother_s_health_information"
+            android:textColor="#090909"
+            android:textSize="16sp"
+            android:textStyle="bold" />
+
+        <TextView
+            android:id="@+id/subtopic1"
+            android:layout_width="match_parent"
+            android:layout_height="29dp"
+            android:layout_below="@id/topic"
+            android:gravity="center|start"
+            android:text="@string/initial_general_examination"
+            android:textSize="16sp" />
+
+        <EditText
+            android:id="@+id/bp"
+            android:layout_width="189dp"
+            android:layout_height="wrap_content"
+            android:layout_below="@id/subtopic1"
+            android:autofillHints="no"
+            android:ems="10"
+            android:hint="@string/whats_your_bp"
+            android:inputType="textPersonName"
+            android:text="@string/bp"
+            android:textSize="14sp" />
+
+        <EditText
+            android:id="@+id/height"
+            android:layout_width="220dp"
+            android:layout_height="wrap_content"
+            android:layout_below="@id/subtopic1"
+            android:layout_marginStart="2dp"
+            android:layout_marginTop="0dp"
+            android:layout_toEndOf="@id/bp"
+            android:ems="10"
+            android:inputType="textPersonName"
+            android:text="@string/height"
+            android:textSize="14sp"
+            android:importantForAutofill="no" />
+
+        <EditText
+            android:id="@+id/pre_pregnancy_wt"
+            android:layout_width="188dp"
+            android:layout_height="wrap_content"
+            android:layout_below="@id/bp"
+            android:ems="10"
+            android:importantForAutofill="no"
+            android:inputType="number"
+            android:text="@string/pre_pregnancy_wt"
+            android:textSize="14sp" />
+
+        <EditText
+            android:id="@+id/bmi"
+            android:layout_width="221dp"
+            android:layout_height="wrap_content"
+            android:layout_below="@id/height"
+            android:layout_toEndOf="@id/pre_pregnancy_wt"
+            android:ems="10"
+            android:importantForAutofill="no"
+            android:inputType="number"
+            android:text="@string/bmi"
+            android:textSize="14sp" />
+
+        <TextView
+            android:id="@+id/no1"
+            android:layout_width="32dp"
+            android:layout_height="wrap_content"
+            android:layout_below="@id/pre_pregnancy_wt"
+            android:text="@string/no" />
+
+        <TextView
+            android:id="@+id/yes1"
+            android:layout_width="38dp"
+            android:layout_height="wrap_content"
+            android:layout_below="@id/pre_pregnancy_wt"
+            android:layout_toEndOf="@id/no1"
+            android:text="@string/yes" />
+
+        <TextView
+            android:id="@+id/no2"
+            android:layout_width="32dp"
+            android:layout_height="wrap_content"
+            android:layout_below="@id/checkBox5"
+            android:text="@string/nl" />
+
+        <TextView
+            android:id="@+id/yes2"
+            android:layout_width="38dp"
+            android:layout_height="wrap_content"
+            android:layout_below="@id/checkBox5"
+            android:layout_toEndOf="@id/no2"
+            android:text="@string/abl" />
+
+        <CheckBox
+            android:id="@+id/checkBox1"
+            android:layout_width="25dp"
+            android:layout_height="27dp"
+            android:layout_below="@id/no1" />
+
+        <CheckBox
+            android:id="@+id/checkBox2"
+            android:layout_width="143dp"
+            android:layout_height="27dp"
+            android:layout_below="@id/no1"
+            android:layout_marginStart="-6dp"
+            android:layout_marginTop="0dp"
+            android:layout_toEndOf="@id/no1"
+            android:text="@string/edema" />
+
+        <CheckBox
+            android:id="@+id/checkBox3"
+            android:layout_width="25dp"
+            android:layout_height="27dp"
+            android:layout_below="@id/no1"
+            android:layout_marginTop="29dp" />
+
+        <CheckBox
+            android:id="@+id/checkBox4"
+            android:layout_width="143dp"
+            android:layout_height="27dp"
+            android:layout_below="@id/checkBox1"
+            android:layout_marginStart="0dp"
+            android:layout_marginTop="2dp"
+            android:layout_toEndOf="@id/checkBox3"
+            android:text="@string/jaundice" />
+
+        <CheckBox
+            android:id="@+id/checkBox5"
+            android:layout_width="25dp"
+            android:layout_height="27dp"
+            android:layout_below="@id/checkBox3"
+            android:layout_marginTop="4dp" />
+
+        <CheckBox
+            android:id="@+id/checkBox6"
+            android:layout_width="143dp"
+            android:layout_height="27dp"
+            android:layout_below="@id/checkBox3"
+            android:layout_marginStart="1dp"
+            android:layout_marginTop="4dp"
+            android:layout_toEndOf="@id/checkBox5"
+            android:text="@string/pallor" />
+
+        <CheckBox
+            android:id="@+id/checkBox7"
+            android:layout_width="25dp"
+            android:layout_height="27dp"
+            android:layout_below="@id/no2"
+            android:layout_marginTop="5dp" />
+
+        <CheckBox
+            android:id="@+id/checkBox8"
+            android:layout_width="143dp"
+            android:layout_height="27dp"
+            android:layout_below="@id/no2"
+            android:layout_marginStart="1dp"
+            android:layout_marginTop="4dp"
+            android:layout_toEndOf="@id/checkBox7"
+            android:text="@string/teeth_gums" />
+
+        <CheckBox
+            android:id="@+id/checkBox9"
+            android:layout_width="25dp"
+            android:layout_height="27dp"
+            android:layout_below="@id/checkBox7"
+            android:layout_marginTop="5dp" />
+
+        <CheckBox
+            android:id="@+id/checkBox10"
+            android:layout_width="143dp"
+            android:layout_height="27dp"
+            android:layout_below="@id/checkBox7"
+            android:layout_marginStart="1dp"
+            android:layout_marginTop="4dp"
+            android:layout_toEndOf="@id/checkBox9"
+            android:text="@string/heart" />
+
+        <CheckBox
+            android:id="@+id/checkBox11"
+            android:layout_width="25dp"
+            android:layout_height="27dp"
+            android:layout_below="@id/checkBox9"
+            android:layout_marginTop="5dp" />
+
+        <CheckBox
+            android:id="@+id/checkBox12"
+            android:layout_width="143dp"
+            android:layout_height="27dp"
+            android:layout_below="@id/checkBox9"
+            android:layout_marginStart="1dp"
+            android:layout_marginTop="4dp"
+            android:layout_toEndOf="@id/checkBox11"
+            android:text="@string/liver" />
+
+        <CheckBox
+            android:id="@+id/checkBox13"
+            android:layout_width="25dp"
+            android:layout_height="27dp"
+            android:layout_below="@id/checkBox9"
+            android:layout_marginTop="5dp" />
+
+        <CheckBox
+            android:id="@+id/checkBox15"
+            android:layout_width="25dp"
+            android:layout_height="27dp"
+            android:layout_below="@id/checkBox13"
+            android:layout_marginTop="5dp" />
+
+        <CheckBox
+            android:id="@+id/checkBox16"
+            android:layout_width="143dp"
+            android:layout_height="27dp"
+            android:layout_below="@id/checkBox13"
+            android:layout_marginStart="2dp"
+            android:layout_marginTop="6dp"
+            android:layout_toEndOf="@id/checkBox15"
+            android:text="@string/lungs" />
+
+        <CheckBox
+            android:id="@+id/checkBox17"
+            android:layout_width="25dp"
+            android:layout_height="27dp"
+            android:layout_below="@id/checkBox15"
+            android:layout_marginTop="5dp" />
+
+        <CheckBox
+            android:id="@+id/checkBox18"
+            android:layout_width="143dp"
+            android:layout_height="27dp"
+            android:layout_below="@id/checkBox15"
+            android:layout_marginStart="1dp"
+            android:layout_marginTop="4dp"
+            android:layout_toEndOf="@id/checkBox17"
+            android:text="@string/breast" />
+
+        <CheckBox
+            android:id="@+id/checkBox19"
+            android:layout_width="25dp"
+            android:layout_height="27dp"
+            android:layout_below="@id/checkBox17"
+            android:layout_marginTop="5dp" />
+
+        <CheckBox
+            android:id="@+id/checkBox20"
+            android:layout_width="143dp"
+            android:layout_height="27dp"
+            android:layout_below="@id/checkBox17"
+            android:layout_marginStart="1dp"
+            android:layout_marginTop="4dp"
+            android:layout_toEndOf="@id/checkBox19"
+            android:text="@string/spleen" />
+
+        <TextView
+            android:id="@+id/subtopic2"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_below="@id/checkBox20"
+            android:layout_marginTop="8dp"
+            android:text="@string/medical_history"
+            android:textSize="16sp" />
+
+        <TextView
+            android:id="@+id/no3"
+            android:layout_width="34dp"
+            android:layout_height="wrap_content"
+            android:layout_below="@id/subtopic2"
+            android:layout_marginTop="6dp"
+            android:text="@string/no1" />
+
+        <TextView
+            android:id="@+id/yes3"
+            android:layout_width="38dp"
+            android:layout_height="wrap_content"
+            android:layout_below="@id/subtopic2"
+            android:layout_marginStart="-1dp"
+            android:layout_marginTop="5dp"
+            android:layout_toEndOf="@id/no3"
+            android:text="@string/yes1" />
+
+        <CheckBox
+            android:id="@+id/ca"
+            android:layout_width="34dp"
+            android:layout_height="30dp"
+            android:layout_below="@id/no3"
+            android:layout_marginTop="3dp" />
+
+        <CheckBox
+            android:id="@+id/cb"
+            android:layout_width="153dp"
+            android:layout_height="30dp"
+            android:layout_below="@id/no3"
+            android:layout_marginStart="-2dp"
+            android:layout_marginTop="-2dp"
+            android:layout_marginEnd="-2dp"
+            android:layout_marginBottom="-2dp"
+            android:layout_toEndOf="@id/ca"
+            android:text="@string/cardiac_disease" />
+
+
+        <CheckBox
+            android:id="@+id/cc"
+            android:layout_width="34dp"
+            android:layout_height="30dp"
+            android:layout_below="@id/no3"
+            android:layout_marginStart="20dp"
+            android:layout_marginTop="2dp"
+            android:layout_toEndOf="@id/cb" />
+
+        <CheckBox
+            android:id="@+id/ce"
+            android:layout_width="156dp"
+            android:layout_height="30dp"
+            android:layout_below="@id/no3"
+            android:layout_marginStart="2dp"
+
+            android:layout_marginTop="1dp"
+            android:layout_toEndOf="@id/cc"
+            android:text="@string/diabetes" />
+
+        <TextView
+            android:id="@+id/no4"
+            android:layout_width="35dp"
+            android:layout_height="wrap_content"
+            android:layout_below="@id/subtopic2"
+            android:layout_marginStart="143dp"
+            android:layout_marginTop="7dp"
+            android:layout_toEndOf="@id/yes3"
+            android:text="@string/no2" />
+
+        <TextView
+            android:id="@+id/yes4"
+            android:layout_width="35dp"
+            android:layout_height="wrap_content"
+            android:layout_below="@id/subtopic2"
+            android:layout_marginStart="-1dp"
+            android:layout_marginTop="7dp"
+            android:layout_toEndOf="@id/no4"
+            android:text="@string/yes2" />
+
+        <CheckBox
+            android:id="@+id/cf"
+            android:layout_width="34dp"
+            android:layout_height="30dp"
+            android:layout_below="@id/ca"
+            android:layout_marginTop="1dp" />
+
+        <CheckBox
+            android:id="@+id/cg"
+            android:layout_width="156dp"
+            android:layout_height="30dp"
+            android:layout_below="@id/ca"
+            android:layout_marginStart="-1dp"
+            android:layout_marginTop="0dp"
+            android:layout_toEndOf="@id/cf"
+            android:text="@string/hypertension" />
+
+        <CheckBox
+            android:id="@+id/ch"
+            android:layout_width="33dp"
+            android:layout_height="30dp"
+            android:layout_below="@id/cc"
+            android:layout_marginStart="16dp"
+            android:layout_marginTop="2dp"
+            android:layout_toEndOf="@id/cg" />
+
+        <CheckBox
+            android:id="@+id/ci"
+            android:layout_width="152dp"
+            android:layout_height="30dp"
+            android:layout_below="@id/ce"
+            android:layout_marginStart="3dp"
+            android:layout_marginTop="2dp"
+            android:layout_toEndOf="@id/ch"
+            android:text="@string/hepatitis" />
+
+        <CheckBox
+            android:id="@+id/cj"
+            android:layout_width="34dp"
+            android:layout_height="30dp"
+            android:layout_below="@id/cf" />
+
+        <CheckBox
+            android:id="@+id/ck"
+            android:layout_width="155dp"
+            android:layout_height="30dp"
+            android:layout_below="@id/cf"
+            android:layout_marginStart="-1dp"
+            android:layout_marginTop="-1dp"
+            android:layout_marginEnd="-1dp"
+            android:layout_marginBottom="-1dp"
+            android:layout_toEndOf="@id/cj"
+            android:text="@string/thyroid_disease" />
+
+        <CheckBox
+            android:id="@+id/cl"
+            android:layout_width="33dp"
+            android:layout_height="30dp"
+            android:layout_below="@id/ch"
+            android:layout_marginStart="18dp"
+            android:layout_marginTop="2dp"
+            android:layout_toEndOf="@id/ck"
+            android:text="@string/tuberculosis" />
+
+        <CheckBox
+            android:id="@+id/cm"
+            android:layout_width="152dp"
+            android:layout_height="30dp"
+            android:layout_below="@id/cg"
+            android:layout_marginStart="3dp"
+            android:layout_marginTop="2dp"
+            android:layout_toEndOf="@id/cl"
+            android:text="@string/tuberculosis1" />
+
+        <CheckBox
+            android:id="@+id/cn"
+            android:layout_width="34dp"
+            android:layout_height="30dp"
+            android:layout_below="@id/cj" />
+
+        <CheckBox
+            android:id="@+id/co"
+            android:layout_width="200dp"
+            android:layout_height="30dp"
+            android:layout_below="@id/ck"
+            android:layout_marginStart="-2dp"
+            android:layout_marginTop="-2dp"
+            android:layout_marginEnd="-2dp"
+            android:layout_marginBottom="-2dp"
+            android:layout_toEndOf="@id/cn"
+            android:text="@string/family_history_of_twins" />
+
+        <CheckBox
+            android:id="@+id/cp"
+            android:layout_width="34dp"
+            android:layout_height="30dp"
+            android:layout_below="@id/cn" />
+
+        <CheckBox
+            android:id="@+id/cq"
+            android:layout_width="390dp"
+            android:layout_height="33dp"
+            android:layout_below="@id/cn"
+            android:layout_marginStart="-2dp"
+            android:layout_marginTop="-2dp"
+            android:layout_marginEnd="-2dp"
+            android:layout_marginBottom="-2dp"
+            android:layout_toEndOf="@id/cp"
+            android:text="@string/family_history_of_congenital_defects_requires_usg_scan_btw_20_22wks" />
+
+        <CheckBox
+            android:id="@+id/cr"
+            android:layout_width="34dp"
+            android:layout_height="33dp"
+            android:layout_below="@id/cp"
+            android:layout_marginStart="-1dp"
+
+            android:layout_marginTop="2dp" />
+
+        <CheckBox
+            android:id="@+id/cs"
+            android:layout_width="wrap_content"
+            android:layout_height="34dp"
+            android:layout_below="@id/cp"
+            android:layout_marginStart="0dp"
+            android:layout_marginTop="1dp"
+            android:layout_toEndOf="@id/cr"
+            android:text="@string/known_substance_use_including_alcohol_doma_smoking" />
+
+        <CheckBox
+            android:id="@+id/ct"
+            android:layout_width="34dp"
+            android:layout_height="30dp"
+            android:layout_below="@id/cr" />
+
+        <CheckBox
+            android:id="@+id/cu"
+            android:layout_width="215dp"
+            android:layout_height="33dp"
+            android:layout_below="@id/cr"
+            android:layout_marginStart="-2dp"
+            android:layout_marginTop="-1dp"
+            android:layout_toEndOf="@id/ct"
+            android:text="@string/infertility_treatment_specify" />
+
+        <CheckBox
+            android:id="@+id/cv"
+            android:layout_width="34dp"
+            android:layout_height="30dp"
+            android:layout_below="@id/ct" />
+
+        <CheckBox
+            android:id="@+id/cw"
+            android:layout_width="390dp"
+            android:layout_height="33dp"
+            android:layout_below="@id/ct"
+            android:layout_marginStart="-2dp"
+            android:layout_marginTop="-2dp"
+            android:layout_marginEnd="-2dp"
+            android:layout_marginBottom="-2dp"
+            android:layout_toEndOf="@id/cv"
+            android:text="@string/other_severe_medical_disease_list" />
+
+        <TextView
+            android:id="@+id/no5"
+            android:layout_width="35dp"
+            android:layout_height="wrap_content"
+            android:layout_below="@id/cv"
+            android:layout_marginStart="-70dp"
+            android:layout_marginTop="7dp"
+            android:layout_toEndOf="@id/yes3"
+            android:text="@string/no3" />
+
+        <TextView
+            android:id="@+id/yes5"
+            android:layout_width="35dp"
+            android:layout_height="wrap_content"
+            android:layout_below="@id/cv"
+            android:layout_marginStart="0dp"
+            android:layout_marginTop="7dp"
+            android:layout_toEndOf="@id/no5"
+            android:text="@string/yes3" />
+
+        <CheckBox
+            android:id="@+id/cb1"
+            android:layout_width="34dp"
+            android:layout_height="30dp"
+            android:layout_below="@id/no5" />
+
+        <CheckBox
+            android:id="@+id/cb2"
+            android:layout_width="180dp"
+            android:layout_height="33dp"
+            android:layout_below="@id/no5"
+            android:layout_marginStart="-2dp"
+            android:layout_marginTop="-2dp"
+            android:layout_marginEnd="-2dp"
+            android:layout_marginBottom="-2dp"
+            android:layout_toEndOf="@id/cb1"
+            android:text="@string/diastolic_bp_over_90" />
+
+        <CheckBox
+            android:id="@+id/cb3"
+            android:layout_width="34dp"
+            android:layout_height="30dp"
+            android:layout_below="@id/cb1" />
+
+        <CheckBox
+            android:id="@+id/cb4"
+            android:layout_width="180dp"
+            android:layout_height="33dp"
+            android:layout_below="@id/cb1"
+            android:layout_marginStart="-2dp"
+            android:layout_marginTop="-1dp"
+            android:layout_toEndOf="@id/cb3"
+            android:text="@string/_18_or_40_years_old" />
+
+        <CheckBox
+            android:id="@+id/cb5"
+            android:layout_width="34dp"
+            android:layout_height="30dp"
+            android:layout_below="@id/cb3" />
+
+        <CheckBox
+            android:id="@+id/cb6"
+            android:layout_width="180dp"
+            android:layout_height="33dp"
+            android:layout_below="@id/cb3"
+            android:layout_marginStart="-2dp"
+            android:layout_marginTop="-1dp"
+            android:layout_toEndOf="@id/cb5"
+            android:text="@string/pelvic_mass" />
+
+        <CheckBox
+            android:id="@+id/cb7"
+            android:layout_width="34dp"
+            android:layout_height="30dp"
+            android:layout_below="@id/cb6" />
+
+        <CheckBox
+            android:id="@+id/cb8"
+            android:layout_width="180dp"
+            android:layout_height="33dp"
+            android:layout_below="@id/cb6"
+            android:layout_marginStart="-2dp"
+            android:layout_marginTop="-1dp"
+            android:layout_toEndOf="@id/cb7"
+            android:text="@string/suspected_twins" />
+
+        <CheckBox
+            android:id="@+id/cb9"
+            android:layout_width="34dp"
+            android:layout_height="30dp"
+            android:layout_below="@id/cb7" />
+
+        <CheckBox
+            android:id="@+id/cb10"
+            android:layout_width="180dp"
+            android:layout_height="33dp"
+            android:layout_below="@id/cb7"
+            android:layout_marginStart="-2dp"
+            android:layout_marginTop="-1dp"
+            android:layout_toEndOf="@id/cb9"
+            android:text="@string/suspected_sti_rti" />
+
+        <CheckBox
+            android:id="@+id/cb11"
+            android:layout_width="34dp"
+            android:layout_height="30dp"
+            android:layout_below="@id/cb9" />
+
+        <CheckBox
+            android:id="@+id/cb12"
+            android:layout_width="180dp"
+            android:layout_height="33dp"
+            android:layout_below="@id/cb9"
+            android:layout_marginStart="-2dp"
+            android:layout_marginTop="-1dp"
+            android:layout_toEndOf="@id/cb11"
+            android:text="@string/vaginal_bleeding" />
+
+        <TextView
+            android:id="@+id/no6"
+            android:layout_width="35dp"
+            android:layout_height="wrap_content"
+            android:layout_below="@id/cv"
+            android:layout_marginStart="143dp"
+            android:layout_marginTop="7dp"
+            android:layout_toEndOf="@id/yes5"
+            android:text="@string/no4" />
+
+        <TextView
+            android:id="@+id/yes6"
+            android:layout_width="35dp"
+            android:layout_height="wrap_content"
+            android:layout_below="@id/cv"
+            android:layout_marginStart="-1dp"
+            android:layout_marginTop="7dp"
+            android:layout_toEndOf="@id/no6"
+            android:text="@string/yes4" />
+
+        <CheckBox
+            android:id="@+id/cb13"
+            android:layout_width="34dp"
+            android:layout_height="30dp"
+            android:layout_below="@id/no6"
+            android:layout_marginStart="30dp"
+            android:layout_marginTop="3dp"
+            android:layout_toEndOf="@id/cb" />
+
+        <CheckBox
+            android:id="@+id/cb14"
+            android:layout_width="156dp"
+            android:layout_height="30dp"
+            android:layout_below="@id/no6"
+            android:layout_marginStart="2dp"
+
+            android:layout_marginTop="2dp"
+            android:layout_marginEnd="2dp"
+            android:layout_marginBottom="2dp"
+            android:layout_toEndOf="@id/cb13"
+            android:text="@string/blood_transfusion" />
+
+        <CheckBox
+            android:id="@+id/cb15"
+            android:layout_width="34dp"
+            android:layout_height="30dp"
+            android:layout_below="@id/cb13"
+            android:layout_marginStart="2dp"
+            android:layout_marginTop="1dp"
+            android:layout_toEndOf="@id/cb4" />
+
+        <CheckBox
+            android:id="@+id/cb16"
+            android:layout_width="159dp"
+            android:layout_height="32dp"
+            android:layout_below="@id/cb2"
+            android:layout_alignParentEnd="true"
+
+            android:layout_marginStart="2dp"
+            android:layout_marginTop="4dp"
+            android:layout_marginEnd="0dp"
+            android:layout_toEndOf="@id/cb15"
+            android:text="@string/transfusion_reaction" />
+
+        <CheckBox
+            android:id="@+id/cb17"
+            android:layout_width="34dp"
+            android:layout_height="30dp"
+            android:layout_below="@id/cb15"
+            android:layout_marginStart="2dp"
+            android:layout_marginTop="3dp"
+            android:layout_toEndOf="@id/cb6" />
+
+        <CheckBox
+            android:id="@+id/cb18"
+            android:layout_width="156dp"
+            android:layout_height="30dp"
+            android:layout_below="@id/cb15"
+            android:layout_marginStart="2dp"
+
+            android:layout_marginTop="3dp"
+            android:layout_toEndOf="@id/cb17"
+            android:text="@string/renal_disease"
+            tools:ignore="TooManyViews" />
+
+        <TextView
+            android:id="@+id/subtopic3"
+            android:layout_width="300dp"
+            android:layout_height="wrap_content"
+            android:layout_below="@id/cb11"
+            android:layout_marginTop="5dp"
+            android:text="@string/past_obstetric_history"
+            android:textSize="16sp" />
+
+        <TextView
+            android:id="@+id/no7"
+            android:layout_width="34dp"
+            android:layout_height="wrap_content"
+            android:layout_below="@id/subtopic3"
+            android:layout_marginTop="6dp"
+            android:text="@string/no8" />
+
+        <TextView
+            android:id="@+id/yes7"
+            android:layout_width="38dp"
+            android:layout_height="wrap_content"
+            android:layout_below="@id/subtopic3"
+            android:layout_marginStart="-1dp"
+            android:layout_marginTop="5dp"
+            android:layout_toEndOf="@id/no7"
+            android:text="@string/yes8" />
+
+        <CheckBox
+            android:id="@+id/box1"
+            android:layout_width="34dp"
+            android:layout_height="30dp"
+            android:layout_below="@id/no7" />
+
+        <CheckBox
+            android:id="@+id/box2"
+            android:layout_width="400dp"
+            android:layout_height="33dp"
+            android:layout_below="@id/no7"
+            android:layout_marginStart="-2dp"
+            android:layout_marginTop="-2dp"
+            android:layout_marginEnd="-2dp"
+            android:layout_marginBottom="-2dp"
+            android:layout_toEndOf="@id/box1"
+            android:text="@string/mother_is_rh_negative_and_father_is_rh_positive" />
+
+
+        <CheckBox
+            android:id="@+id/box3"
+            android:layout_width="34dp"
+            android:layout_height="30dp"
+            android:layout_below="@id/box1" />
+
+        <CheckBox
+            android:id="@+id/box4"
+            android:layout_width="400dp"
+            android:layout_height="33dp"
+            android:layout_below="@id/box1"
+            android:layout_marginStart="-2dp"
+            android:layout_marginTop="-2dp"
+            android:layout_marginEnd="-2dp"
+            android:layout_marginBottom="-2dp"
+            android:layout_toEndOf="@id/box3"
+            android:text="@string/previous_still_birth_neonatal_loss_or_congenital_defect_circle" />
+
+
+        <CheckBox
+            android:id="@+id/box5"
+            android:layout_width="34dp"
+            android:layout_height="30dp"
+            android:layout_below="@id/box3" />
+
+        <CheckBox
+            android:id="@+id/box6"
+            android:layout_width="400dp"
+            android:layout_height="33dp"
+            android:layout_below="@id/box3"
+            android:layout_marginStart="-2dp"
+            android:layout_marginTop="-2dp"
+            android:layout_marginEnd="-2dp"
+            android:layout_marginBottom="-2dp"
+            android:layout_toEndOf="@id/box5"
+            android:text="@string/history_of_3_or_more_consecutive_spontaneous_abortions" />
+
+
+        <CheckBox
+            android:id="@+id/box7"
+            android:layout_width="34dp"
+            android:layout_height="30dp"
+            android:layout_below="@id/box5" />
+
+        <CheckBox
+            android:id="@+id/box8"
+            android:layout_width="400dp"
+            android:layout_height="33dp"
+            android:layout_below="@id/box5"
+            android:layout_marginStart="-2dp"
+            android:layout_marginTop="-2dp"
+            android:layout_marginEnd="-2dp"
+            android:layout_marginBottom="-2dp"
+            android:layout_toEndOf="@id/box7"
+            android:text="@string/birth_weight_of_last_baby_less_than_2500_grams" />
+
+
+        <CheckBox
+            android:id="@+id/box9"
+            android:layout_width="34dp"
+            android:layout_height="30dp"
+            android:layout_below="@id/box7" />
+
+        <CheckBox
+            android:id="@+id/box10"
+            android:layout_width="400dp"
+            android:layout_height="33dp"
+            android:layout_below="@id/box7"
+            android:layout_marginStart="-2dp"
+            android:layout_marginTop="-2dp"
+            android:layout_marginEnd="-2dp"
+            android:layout_marginBottom="-2dp"
+            android:layout_toEndOf="@id/box9"
+            android:text="@string/birth_weight_of_last_baby_more_than_4500_grams" />
+
+
+        <CheckBox
+            android:id="@+id/box11"
+            android:layout_width="34dp"
+            android:layout_height="46dp"
+            android:layout_below="@id/box9" />
+
+        <CheckBox
+            android:id="@+id/box12"
+            android:layout_width="377dp"
+            android:layout_height="50dp"
+            android:layout_below="@id/box9"
+            android:layout_marginStart="-2dp"
+            android:layout_marginTop="-2dp"
+            android:layout_marginEnd="-2dp"
+            android:layout_marginBottom="-2dp"
+            android:layout_toEndOf="@id/box11"
+            android:text="@string/last_pregnancy_childbirth_circle_from_list_below_chronic_hypertension_pre_eclampsia_or_eclampsia_pph_retained_placenta" />
+
+        <CheckBox
+            android:id="@+id/box13"
+            android:layout_width="34dp"
+            android:layout_height="69dp"
+            android:layout_below="@id/box11" />
+
+        <CheckBox
+            android:id="@+id/box14"
+            android:layout_width="400dp"
+            android:layout_height="70dp"
+            android:layout_below="@id/box11"
+            android:layout_marginStart="-2dp"
+            android:layout_marginTop="-2dp"
+            android:layout_marginEnd="-2dp"
+            android:layout_marginBottom="-2dp"
+            android:layout_toEndOf="@id/box13"
+            android:text="@string/previous_surgery_on_reproductive_tract_circle_from_list_below_caesarean_section_servical_cerclage_leep_myomectomy_ectopic_other" />
+
+        <EditText
+            android:id="@+id/medslist"
+            android:layout_width="400dp"
+            android:layout_height="wrap_content"
+            android:layout_below="@id/box13"
+            android:ems="10"
+            android:inputType="textPersonName"
+            android:text="@string/list_medicines"
+            android:textSize="16sp"
+            android:importantForAutofill="no" />
+
+        <EditText
+            android:id="@+id/medslist1"
+            android:layout_width="400dp"
+            android:layout_height="39dp"
+            android:ems="10"
+            android:layout_below="@id/medslist"
+            android:inputType="textPersonName"
+            android:text=""
+            android:importantForAutofill="no" />
+        <EditText
+            android:id="@+id/medslist2"
+            android:layout_width="400dp"
+            android:layout_height="39dp"
+            android:ems="10"
+            android:layout_below="@id/medslist1"
+            android:inputType="textPersonName"
+            android:text=""
+            android:importantForAutofill="no" />
+
+        <EditText
+            android:id="@+id/allelist"
+            android:layout_width="400dp"
+            android:layout_height="50dp"
+            android:layout_below="@id/medslist2"
+            android:ems="10"
+            android:inputType="textPersonName"
+            android:text="@string/list_allergies"
+            android:textSize="16sp"
+            android:importantForAutofill="no" />
+
+        <EditText
+            android:id="@+id/allelist1"
+            android:layout_width="400dp"
+            android:layout_height="39dp"
+            android:layout_below="@id/allelist"
+            android:ems="10"
+            android:inputType="textPersonName"
+            android:text=""
+            android:importantForAutofill="no" />
+        <EditText
+            android:id="@+id/allelist2"
+            android:layout_width="400dp"
+            android:layout_height="39dp"
+            android:ems="10"
+            android:layout_below="@id/allelist1"
+            android:inputType="textPersonName"
+            android:text=""
+            android:importantForAutofill="no" />
+
+        <TextView
+            android:id="@+id/lastnote"
+            android:layout_width="400dp"
+            android:layout_height="50dp"
+            android:layout_below="@id/allelist2"
+            android:text="@string/if_any_of_the_highlighted_questions_are_yes_provide_closer_follow_up_or_refer_as_indicated"
+            android:textSize="16sp"
+            android:textStyle="italic" />
+
+        <EditText
+            android:id="@+id/ctext1"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_below="@+id/cs"
+            android:layout_marginTop="-8dp"
+            android:layout_toEndOf="@+id/cu"
+            android:ems="10"
+            android:inputType="textPersonName"
+            android:text="" />
+
+        <EditText
+            android:id="@+id/ctext2"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_below="@+id/cv"
+            android:layout_marginStart="-132dp"
+            android:layout_marginTop="-35dp"
+            android:layout_toEndOf="@+id/cw"
+            android:ems="10"
+            android:inputType="textPersonName"
+            android:text="" />
+
+
+
+
+    </RelativeLayout>
+
+
+</ScrollView>
