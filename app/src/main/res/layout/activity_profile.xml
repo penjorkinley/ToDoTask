@@ -28,7 +28,7 @@
         <androidx.appcompat.widget.AppCompatButton
             android:layout_width="40dp"
             android:layout_height="40dp"
-            android:layout_marginStart="260dp"
+            android:layout_marginStart="250dp"
             android:layout_marginTop="5dp"
             android:layout_toEndOf="@+id/home_profile_pic"
             android:background="@drawable/logout_btn_style"
@@ -52,7 +52,7 @@
         <androidx.viewpager2.widget.ViewPager2
             android:id="@+id/view_pager"
             android:layout_width="match_parent"
-            android:layout_height="630dp"
+            android:layout_height="600dp"
             android:layout_below="@+id/home_profile_pic"
             android:layout_marginTop="20dp" />
 

@@ -228,10 +228,11 @@ public class SignUpActivity extends AppCompatActivity {
                                         }
                                     });
 
-                                   startActivity(new Intent(SignUpActivity.this, ProfileActivity.class));
-                                   finish();
-                                   loader.dismiss();
+
                                 }
+                                startActivity(new Intent(SignUpActivity.this, ProfileActivity.class));
+                                finish();
+                                loader.dismiss();
                             }
                         }
                     });

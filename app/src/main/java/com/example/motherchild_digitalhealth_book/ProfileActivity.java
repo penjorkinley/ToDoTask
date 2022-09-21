@@ -40,13 +40,20 @@ public class ProfileActivity extends AppCompatActivity {
         setContentView(R.layout.activity_profile);
         Objects.requireNonNull(getSupportActionBar()).hide();
 
+        //to get profile pic and user name
+        profile_imageView = findViewById(R.id.home_profile_pic);
+        username_tv = findViewById(R.id.home_username);
+
+        databaseReference = FirebaseDatabase.getInstance().getReference().child("users").child(
+                Objects.requireNonNull(FirebaseAuth.getInstance().getCurrentUser()).getUid()
+        );
+
         //for alert dialog box
         builder = new AlertDialog.Builder(this);
 
         viewPager2 = findViewById(R.id.view_pager);
         tabLayout = findViewById(R.id.tabLayout);
         myViewPagerAdapter = new MyViewPagerAdapter(this);
-
         viewPager2.setAdapter(myViewPagerAdapter);
 
         tabLayout.addOnTabSelectedListener(new TabLayout.OnTabSelectedListener() {
@@ -65,33 +72,26 @@ public class ProfileActivity extends AppCompatActivity {
 
             }
         });
-        //to get profile pic and user name
+            databaseReference.addValueEventListener(new ValueEventListener() {
+            @Override
+            public void onDataChange(@NonNull DataSnapshot snapshot) {
+                if (snapshot.exists()){
+                    //to get username
+                    String name = Objects.requireNonNull(snapshot.child("name").getValue()).toString();
+                    username_tv.setText(name);
 
-//        profile_imageView = findViewById(R.id.home_profile_pic);
-//        username_tv = findViewById(R.id.home_username);
-//
-//        databaseReference = FirebaseDatabase.getInstance().getReference().child("users").child(
-//                FirebaseAuth.getInstance().getCurrentUser().getUid()
-//        );
-//        databaseReference.addValueEventListener(new ValueEventListener() {
-//            @Override
-//            public void onDataChange(@NonNull DataSnapshot snapshot) {
-//                if (snapshot.exists()){
-//                    //to get username
-//                    String name = snapshot.child("name").getValue().toString();
-//                    username_tv.setText(name);
-//
-//                    //to get profile picture
-//                    String imageUrl = snapshot.child("profile_picture_url").getValue().toString();
-//                    Glide.with(getApplicationContext()).load(imageUrl).into(profile_imageView);
-//                }
-//            }
-//
-//            @Override
-//            public void onCancelled(@NonNull DatabaseError error) {
-//
-//            }
-//        });
+                    //to get profile picture
+                    String imageUrl = Objects.requireNonNull(snapshot.child("profile_picture_url").getValue()).toString();
+                    Glide.with(getApplicationContext()).load(imageUrl).into(profile_imageView);
+                }
+            }
+
+            @Override
+            public void onCancelled(@NonNull DatabaseError error) {
+
+            }
+        });
+
     }
 
     public void edit_profile(View view) {
@@ -117,4 +117,5 @@ public class ProfileActivity extends AppCompatActivity {
                     }
                 }).show();
     }
+
 }
