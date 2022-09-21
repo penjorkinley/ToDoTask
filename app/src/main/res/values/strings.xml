@@ -5,6 +5,8 @@
     <string name="enter_your_password">Enter Your Password</string>
     <string name="login">Login</string>
     <string name="forgot_password">Forgot Password?</string>
+    <string name="emergency_contact_please_provide_two"><b>Emergency Contact</b> <small>(Please provide two)</small></string>
+
 
     <string-array name="month">
         <item>Select Month</item>
