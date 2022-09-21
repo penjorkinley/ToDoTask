@@ -218,10 +218,12 @@ public class SignUpActivity extends AppCompatActivity {
                                                                 }
                                                                 else{
                                                                     Toast.makeText(SignUpActivity.this, task.getException().toString(), Toast.LENGTH_SHORT).show();
+
                                                                 }
                                                             }
                                                         });
                                                         finish();
+
                                                     }
                                                 });
                                             }
@@ -234,6 +236,7 @@ public class SignUpActivity extends AppCompatActivity {
                                 finish();
                                 loader.dismiss();
                             }
+                            loader.dismiss();
                         }
                     });
 

@@ -40,6 +40,8 @@ public class ProfileActivity extends AppCompatActivity {
         setContentView(R.layout.activity_profile);
         Objects.requireNonNull(getSupportActionBar()).hide();
 
+
+
         //to get profile pic and user name
         profile_imageView = findViewById(R.id.home_profile_pic);
         username_tv = findViewById(R.id.home_username);
@@ -47,6 +49,27 @@ public class ProfileActivity extends AppCompatActivity {
         databaseReference = FirebaseDatabase.getInstance().getReference().child("users").child(
                 Objects.requireNonNull(FirebaseAuth.getInstance().getCurrentUser()).getUid()
         );
+
+        databaseReference.addValueEventListener(new ValueEventListener() {
+            @Override
+            public void onDataChange(@NonNull DataSnapshot snapshot) {
+                if (snapshot.exists()){
+
+                    //to get username
+                    String name = snapshot.child("name").getValue().toString();
+                    username_tv.setText(name);
+
+                    //to get profile picture
+//                    String imageUrl = snapshot.child("profile_picture_url").getValue().toString();
+//                    Glide.with(getApplicationContext()).load(imageUrl).into(profile_imageView);
+                }
+            }
+
+            @Override
+            public void onCancelled(@NonNull DatabaseError error) {
+
+            }
+        });
 
         //for alert dialog box
         builder = new AlertDialog.Builder(this);
@@ -72,30 +95,12 @@ public class ProfileActivity extends AppCompatActivity {
 
             }
         });
-            databaseReference.addValueEventListener(new ValueEventListener() {
-            @Override
-            public void onDataChange(@NonNull DataSnapshot snapshot) {
-                if (snapshot.exists()){
-                    //to get username
-                    String name = Objects.requireNonNull(snapshot.child("name").getValue()).toString();
-                    username_tv.setText(name);
 
-                    //to get profile picture
-                    String imageUrl = Objects.requireNonNull(snapshot.child("profile_picture_url").getValue()).toString();
-                    Glide.with(getApplicationContext()).load(imageUrl).into(profile_imageView);
-                }
-            }
-
-            @Override
-            public void onCancelled(@NonNull DatabaseError error) {
-
-            }
-        });
 
     }
 
     public void edit_profile(View view) {
-//        startActivity(new Intent(ProfileActivity.this, Edit_ProfileActivity.class));
+        startActivity(new Intent(ProfileActivity.this, EditProfile_activity.class));
     }
 
     //to logout

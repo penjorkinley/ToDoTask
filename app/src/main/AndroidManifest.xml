@@ -16,6 +16,9 @@
         android:theme="@style/Theme.MotherChild_DigitalHealth_Book"
         tools:targetApi="31">
         <activity
+            android:name=".EditProfile_activity"
+            android:exported="false" />
+        <activity
             android:name=".MothersHealthInfo"
             android:exported="false" />
         <activity
