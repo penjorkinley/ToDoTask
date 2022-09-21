@@ -1,0 +1,271 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    android:background="#EAEDF0"
+    tools:context=".SignUpActivity">
+
+    <androidx.cardview.widget.CardView
+        android:id="@+id/login_view"
+        android:layout_width="350dp"
+        android:layout_height="700dp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:cardCornerRadius="15dp"
+        android:elevation="100dp">
+
+        <ScrollView
+            android:layout_width="match_parent"
+            android:layout_height="match_parent">
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="vertical"
+                android:paddingStart="10dp">
+
+
+                <TextView
+                    android:layout_width="match_parent"
+                    android:layout_height="50dp"
+                    android:layout_marginTop="20dp"
+                    android:text="Create Your Account"
+                    android:textAlignment="center"
+                    android:textColor="@color/black"
+                    android:textSize="26sp" />
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="40sp"
+                    android:layout_marginTop="10dp"
+                    android:text="Upload Photo:"
+                    android:textColor="@color/black"
+                    android:textSize="20sp"
+                    android:layout_marginStart="10dp"/>
+
+                <de.hdodenhof.circleimageview.CircleImageView
+                    android:id="@+id/signUp_profile_pic"
+                    android:layout_width="120dp"
+                    android:layout_height="120dp"
+                    android:layout_gravity="center"
+                    android:layout_marginTop="0dp"
+                    android:src="@drawable/profile_image"
+                    app:civ_border_color="#FF000000"
+                    app:civ_border_width="2dp" />
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="40sp"
+                    android:layout_marginTop="10dp"
+                    android:text="Name:"
+                    android:textColor="@color/black"
+                    android:textSize="20sp"
+                    android:layout_marginStart="5dp"/>
+
+
+                <EditText
+                    android:id="@+id/name_input"
+                    android:layout_width="315dp"
+                    android:layout_height="45dp"
+                    android:background="@drawable/edit_textview_styles"
+                    android:ems="10"
+                    android:hint="Enter Your Name"
+                    android:inputType="text"
+                    android:paddingStart="12dp"
+                    android:paddingEnd="12dp"
+                    android:layout_marginStart="5dp"
+                    tools:ignore="HardcodedText"
+                    android:importantForAutofill="no" />
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="40sp"
+                    android:layout_marginTop="10dp"
+                    android:text="Email Address:"
+                    android:textColor="@color/black"
+                    android:textSize="20sp"
+                    android:layout_marginStart="5dp"/>
+
+                <EditText
+                    android:id="@+id/emailAddress_input"
+                    android:layout_width="315dp"
+                    android:layout_height="45dp"
+                    android:background="@drawable/edit_textview_styles"
+                    android:ems="10"
+                    android:hint="Enter Your Email Address "
+                    android:inputType="textEmailAddress"
+                    android:paddingStart="12dp"
+                    android:paddingEnd="12dp"
+                    android:layout_marginStart="5dp"
+                    android:importantForAutofill="no" />
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="40sp"
+                    android:layout_marginTop="10dp"
+                    android:text="Citizen Identity Card No:"
+                    android:textColor="@color/black"
+                    android:textSize="20sp"
+                    android:layout_marginStart="5dp"/>
+
+                <EditText
+                    android:id="@+id/cid_input"
+                    android:layout_width="315dp"
+                    android:layout_height="45dp"
+                    android:background="@drawable/edit_textview_styles"
+                    android:ems="10"
+                    android:hint="Enter Your CID No "
+                    android:inputType="number"
+                    android:paddingStart="12dp"
+                    android:paddingEnd="12dp"
+                    android:layout_marginStart="5dp"
+                    android:importantForAutofill="no" />
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="40sp"
+                    android:layout_marginTop="10dp"
+                    android:text="Date Of Birth:"
+                    android:textColor="@color/black"
+                    android:textSize="20sp"
+                    android:layout_marginStart="5dp"/>
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="45dp"
+                    android:orientation="horizontal">
+
+                    <EditText
+                        android:id="@+id/date_input"
+                        android:layout_width="70dp"
+                        android:layout_height="45dp"
+                        android:background="@drawable/edit_textview_styles"
+                        android:ems="10"
+                        android:hint="Date "
+                        android:inputType="number"
+                        android:textAlignment="center"
+                        android:layout_marginStart="5dp"
+                        tools:ignore="TextFields"
+                        android:importantForAutofill="no" />
+
+                    <Spinner
+                        android:id="@+id/month_input"
+                        android:layout_width="140dp"
+                        android:layout_height="45dp"
+                        android:layout_marginStart="10dp"
+                        android:entries="@array/month"
+                        android:background="@drawable/edit_textview_styles" />
+
+                    <EditText
+                        android:id="@+id/year_input"
+                        android:layout_width="90dp"
+                        android:layout_height="45dp"
+                        android:layout_marginLeft="10dp"
+                        android:background="@drawable/edit_textview_styles"
+                        android:ems="10"
+                        android:hint="Year "
+                        android:inputType="number"
+                        android:textAlignment="center"
+                        tools:ignore="HardcodedText"
+                        android:importantForAutofill="no" />
+                </LinearLayout>
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="40sp"
+                    android:layout_marginTop="10dp"
+                    android:text="Mobile No:"
+                    android:textColor="@color/black"
+                    android:textSize="20sp"
+                    android:layout_marginStart="5dp"/>
+
+
+                <EditText
+                    android:id="@+id/mobileNo_input"
+                    android:layout_width="315dp"
+                    android:layout_height="45dp"
+                    android:layout_marginStart="5dp"
+                    android:background="@drawable/edit_textview_styles"
+                    android:ems="10"
+                    android:hint="Enter Your Mobile No"
+                    android:inputType="number"
+                    android:paddingStart="12dp"
+                    android:paddingEnd="12dp"
+                    android:importantForAutofill="no" />
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="40sp"
+                    android:layout_marginTop="10dp"
+                    android:text="Password:"
+                    android:textColor="@color/black"
+                    android:textSize="20sp"
+                    android:layout_marginStart="5dp"/>
+
+
+                <EditText
+                    android:id="@+id/password_input"
+                    android:layout_width="315dp"
+                    android:layout_height="45dp"
+                    android:background="@drawable/edit_textview_styles"
+                    android:ems="10"
+                    android:hint=" Create Your Password"
+                    android:inputType="textPassword"
+                    android:paddingStart="12dp"
+                    android:paddingEnd="12dp"
+                    android:layout_marginStart="5dp"
+                    tools:ignore="HardcodedText"
+                    android:importantForAutofill="no" />
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="40sp"
+                    android:layout_marginTop="10dp"
+                    android:text="Confirm Password:"
+                    android:textColor="@color/black"
+                    android:textSize="20sp"
+                    android:layout_marginStart="5dp"
+                    tools:ignore="HardcodedText" />
+
+
+                <EditText
+                    android:id="@+id/confirmPassword_input"
+                    android:layout_width="315dp"
+                    android:layout_height="45dp"
+                    android:background="@drawable/edit_textview_styles"
+                    android:ems="10"
+                    android:hint=" Confirm Your Password"
+                    android:inputType="textPassword"
+                    android:paddingStart="12dp"
+                    android:paddingEnd="12dp"
+                    android:layout_marginStart="5dp"
+                    tools:ignore="HardcodedText"
+                    android:importantForAutofill="no" />
+
+
+                <androidx.appcompat.widget.AppCompatButton
+                    android:id="@+id/sigup_btn"
+                    android:layout_width="150dp"
+                    android:layout_height="50dp"
+                    android:layout_gravity="center_horizontal"
+                    android:layout_marginTop="50dp"
+                    android:layout_marginBottom="20dp"
+                    android:background="@drawable/button_style"
+                    android:text="Sign Up"
+                    android:textColor="@color/white"
+                    android:textSize="18sp" />
+
+            </LinearLayout>
+        </ScrollView>
+
+
+    </androidx.cardview.widget.CardView>
+
+
+
+</androidx.constraintlayout.widget.ConstraintLayout>

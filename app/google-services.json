@@ -1,0 +1,47 @@
+{
+  "project_info": {
+    "project_number": "1090078720184",
+    "project_id": "motherchild-digital-healthbook",
+    "storage_bucket": "motherchild-digital-healthbook.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:1090078720184:android:cc81ba6cd73eb554dd344d",
+        "android_client_info": {
+          "package_name": "com.example.motherchild_digitalhealth_book"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "1090078720184-6l0h467dps19clh13tcinlgp90uunktt.apps.googleusercontent.com",
+          "client_type": 1,
+          "android_info": {
+            "package_name": "com.example.motherchild_digitalhealth_book",
+            "certificate_hash": "855d70b9e63718cb566ee585e47ba8c3fdeb708d"
+          }
+        },
+        {
+          "client_id": "1090078720184-f5h9qoih0rlk3sleq82kfd4u3o5h32ld.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyBkDiVN9y4B9gq7-tSmSVt8Lj0CNB6UMb4"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "1090078720184-f5h9qoih0rlk3sleq82kfd4u3o5h32ld.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}

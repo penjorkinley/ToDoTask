@@ -1,0 +1,99 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".ProfileActivity">
+
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:paddingTop="15dp"
+        tools:ignore="UselessParent">
+
+        <de.hdodenhof.circleimageview.CircleImageView
+            android:id="@+id/home_profile_pic"
+            android:layout_width="50dp"
+            android:layout_height="50dp"
+            android:layout_gravity="center"
+            android:layout_marginStart="15dp"
+            android:onClick="edit_profile"
+            android:src="@drawable/profile_image"
+            app:civ_border_color="#FF000000"
+            app:civ_border_width="2dp"
+            tools:ignore="UsingOnClickInXml" />
+
+
+        <androidx.appcompat.widget.AppCompatButton
+            android:layout_width="40dp"
+            android:layout_height="40dp"
+            android:layout_marginStart="260dp"
+            android:layout_marginTop="5dp"
+            android:layout_toEndOf="@+id/home_profile_pic"
+            android:background="@drawable/logout_btn_style"
+            android:drawableStart="@drawable/logout_btn"
+            android:onClick="logout"
+            tools:ignore="UsingOnClickInXml" />
+
+
+        <TextView
+            android:id="@+id/home_username"
+            android:layout_width="wrap_content"
+            android:layout_height="30dp"
+            android:layout_marginStart="10dp"
+            android:layout_marginTop="15dp"
+            android:layout_toEndOf="@id/home_profile_pic"
+            android:text="Username"
+            android:textColor="@color/black"
+            android:textSize="16sp"
+            tools:ignore="HardcodedText" />
+
+        <androidx.viewpager2.widget.ViewPager2
+            android:id="@+id/view_pager"
+            android:layout_width="match_parent"
+            android:layout_height="630dp"
+            android:layout_below="@+id/home_profile_pic"
+            android:layout_marginTop="20dp" />
+
+        <com.google.android.material.tabs.TabLayout
+            android:id="@+id/tabLayout"
+            android:layout_width="match_parent"
+            android:layout_height="60dp"
+            android:layout_below="@id/view_pager"
+            android:layout_marginTop="3dp"
+            android:backgroundTint="#1877F2"
+            app:tabGravity="center"
+            app:tabIconTint="@color/selected_tab"
+            app:tabIconTintMode="@color/white"
+            app:tabIndicatorHeight="0dp"
+            app:tabMode="fixed"
+            app:tabSelectedTextColor="@color/black"
+            app:tabTextAppearance="@style/customTabLayout"
+            app:tabTextColor="@color/white"
+            >
+
+            <com.google.android.material.tabs.TabItem
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:icon="@drawable/home_icon"
+                android:text="Home"
+                tools:ignore="HardcodedText" />
+
+            <com.google.android.material.tabs.TabItem
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:icon="@drawable/info_icon"
+                android:text="Information"
+                tools:ignore="HardcodedText" />
+
+            <com.google.android.material.tabs.TabItem
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:icon="@drawable/notification_icon"
+                android:text="Reminder"
+                tools:ignore="HardcodedText" />
+        </com.google.android.material.tabs.TabLayout>
+
+    </RelativeLayout>
+</LinearLayout>

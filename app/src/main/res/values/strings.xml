@@ -1,0 +1,27 @@
+<resources>
+    <string name="app_name">MotherChild_DigitalHealth_Book</string>
+    <string name="sign_up">Sign up</string>
+    <string name="enter_your_email_address">Enter Your Email Address</string>
+    <string name="enter_your_password">Enter Your Password</string>
+    <string name="login">Login</string>
+    <string name="forgot_password">Forgot Password?</string>
+
+    <string-array name="month">
+        <item>Select Month</item>
+        <item>January</item>
+        <item>February</item>
+        <item>March</item>
+        <item>April</item>
+        <item>May</item>
+        <item>June</item>
+        <item>July</item>
+        <item>August</item>
+        <item>September</item>
+        <item>October</item>
+        <item>November</item>
+        <item>December</item>
+
+    </string-array>
+    <!-- TODO: Remove or change this placeholder text -->
+    <string name="hello_blank_fragment">Hello blank fragment</string>
+</resources>
