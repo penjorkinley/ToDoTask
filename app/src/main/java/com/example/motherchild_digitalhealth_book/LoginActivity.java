@@ -24,6 +24,11 @@ import com.google.firebase.auth.AuthResult;
 import com.google.firebase.auth.FirebaseAuth;
 import com.google.firebase.auth.FirebaseUser;
 
+import com.google.firebase.database.DataSnapshot;
+import com.google.firebase.database.DatabaseError;
+import com.google.firebase.database.DatabaseReference;
+import com.google.firebase.database.FirebaseDatabase;
+import com.google.firebase.database.ValueEventListener;
 import com.google.firebase.firestore.DocumentReference;
 import com.google.firebase.firestore.DocumentSnapshot;
 import com.google.firebase.firestore.FirebaseFirestore;
@@ -36,6 +41,7 @@ public class LoginActivity extends AppCompatActivity {
     private ProgressDialog loader;
     private FirebaseAuth mauth;
     private FirebaseFirestore fstore;
+    private FirebaseDatabase rdb;
 
     private FirebaseAuth.AuthStateListener authStateListener;
 
@@ -53,6 +59,7 @@ public class LoginActivity extends AppCompatActivity {
 
         mauth = FirebaseAuth.getInstance();
         fstore = FirebaseFirestore.getInstance();
+        rdb = FirebaseDatabase.getInstance();
 
         authStateListener = firebaseAuth -> {
             FirebaseUser user = mauth.getCurrentUser();
@@ -107,13 +114,13 @@ public class LoginActivity extends AppCompatActivity {
                     @Override
                     public void onSuccess(AuthResult authResult) {
                         Toast.makeText(LoginActivity.this, "Login Successfully", Toast.LENGTH_SHORT).show();
-                        isAdmin(Objects.requireNonNull(authResult.getUser()).getUid());
+                        isAdmin(authResult.getUser().getUid());
                     }
                 }).addOnFailureListener(new OnFailureListener() {
                     @Override
                     public void onFailure(@NonNull Exception e) {
-                        Toast.makeText(LoginActivity.this, e.getMessage(), Toast.LENGTH_SHORT).show();
                         loader.dismiss();
+                        Toast.makeText(LoginActivity.this, e.getMessage(), Toast.LENGTH_SHORT).show();
                     }
                 });
 
@@ -127,7 +134,7 @@ public class LoginActivity extends AppCompatActivity {
     }
 
     private void isAdmin(String uid) {
-        DocumentReference df = fstore.collection("user").document(uid);
+        DocumentReference df = fstore.collection("users").document(uid);
         df.get().addOnSuccessListener(new OnSuccessListener<DocumentSnapshot>() {
             @Override
             public void onSuccess(DocumentSnapshot documentSnapshot) {
@@ -156,42 +163,3 @@ public class LoginActivity extends AppCompatActivity {
     }
 
 }
-//                mauth.signInWithEmailAndPassword(emailTxt, passwordTxt).addOnCompleteListener(new OnCompleteListener<AuthResult>() {
-//                    @Override
-//                    public void onComplete(@NonNull Task<AuthResult> task) {
-//                        if (task.isSuccessful()){
-//                            Toast.makeText(LoginActivity.this, "Login Successful", Toast.LENGTH_SHORT).show();
-//                            String uid = task.getResult().getUser().getUid();
-//
-//                            FirebaseDatabase firebaseDatabase = FirebaseDatabase.getInstance();
-//                            firebaseDatabase.getReference().child("user").child(uid).child("userType").addListenerForSingleValueEvent(new ValueEventListener() {
-//                                @Override
-//                                public void onDataChange(@NonNull DataSnapshot snapshot) {
-//                                    int userType = snapshot.getValue(Integer.class);
-//
-//                                    if (userType == 1){
-//                                        startActivity(new Intent(LoginActivity.this, AdminActivity.class));
-//                                    }
-//                                    else{
-//                                        startActivity(new Intent(LoginActivity.this, ProfileActivity.class));
-//                                    }
-//                                    finish();
-//
-//                                }
-//
-//                                @Override
-//                                public void onCancelled(@NonNull DatabaseError error) {
-//
-//                                }
-//                            });
-//
-//
-//                        }
-//                        else{
-//                            Toast.makeText(LoginActivity.this, "Incorrect email or password", Toast.LENGTH_SHORT).show();
-//                        }
-//                        loader.dismiss();
-//
-//                    }
-
-//                });
