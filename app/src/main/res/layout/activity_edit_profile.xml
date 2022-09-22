@@ -42,7 +42,7 @@
                 android:paddingStart="10dp"
                 android:text="Username"
                 android:textColor="@color/black"
-                android:textSize="16sp"
+                android:textSize="15sp"
                 tools:ignore="HardcodedText,RtlSymmetry" />
 
             <TextView
@@ -55,8 +55,9 @@
                 android:paddingStart="10dp"
                 android:text="Email address"
                 android:textColor="@color/black"
-                android:textSize="16sp"
+                android:textSize="14sp"
                 tools:ignore="HardcodedText,RtlSymmetry" />
+
             <TextView
                 android:id="@+id/edit_profile_phoneNo"
                 android:layout_width="match_parent"
@@ -67,18 +68,18 @@
                 android:paddingStart="10dp"
                 android:text="Phone Number"
                 android:textColor="@color/black"
-                android:textSize="16sp"
+                android:textSize="14sp"
                 tools:ignore="HardcodedText,RtlSymmetry" />
 
             <TextView
                 android:id="@+id/change_profile_pic"
                 android:layout_width="match_parent"
                 android:layout_height="40dp"
+                android:layout_below="@+id/edit_profile_pic"
                 android:layout_marginTop="10dp"
                 android:text="Change profile photo"
-                android:textSize="18sp"
                 android:textColor="#1877F2"
-                android:layout_below="@+id/edit_profile_pic"
+                android:textSize="18sp"
                 tools:ignore="HardcodedText" />
 
             <androidx.appcompat.widget.AppCompatButton

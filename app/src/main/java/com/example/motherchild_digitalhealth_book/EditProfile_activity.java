@@ -64,8 +64,13 @@ public class EditProfile_activity extends AppCompatActivity {
                     String phoneNum = snapshot.child("mobile No").getValue().toString();
                     phoneNo.setText(phoneNum);
 
-                    String imageUrl = snapshot.child("profile_picture_url").getValue().toString();
-                    Glide.with(getApplicationContext()).load(imageUrl).into(edit_imageView);
+                    if (snapshot.hasChild("profile_picture_url")){
+                        String imageUrl = snapshot.child("profile_picture_url").getValue().toString();
+                        Glide.with(getApplicationContext()).load(imageUrl).into(edit_imageView);
+                    }else{
+                        edit_imageView.setImageResource(R.drawable.profile_image);
+                    }
+
                 }
             }
 

@@ -168,7 +168,7 @@ public class SignUpActivity extends AppCompatActivity {
                                     @Override
                                     public void onComplete(@NonNull Task task) {
                                         if (task.isSuccessful()){
-                                            Toast.makeText(SignUpActivity.this, "Data saved successful", Toast.LENGTH_SHORT).show();
+                                            Toast.makeText(SignUpActivity.this, "Registered Successfully", Toast.LENGTH_SHORT).show();
                                         }
                                         else{
                                             Toast.makeText(SignUpActivity.this, task.getException().toString(), Toast.LENGTH_SHORT).show();

@@ -19,6 +19,8 @@ import com.google.firebase.database.DatabaseError;
 import com.google.firebase.database.DatabaseReference;
 import com.google.firebase.database.FirebaseDatabase;
 import com.google.firebase.database.ValueEventListener;
+import com.google.firebase.storage.FirebaseStorage;
+import com.google.firebase.storage.StorageReference;
 
 import java.util.Objects;
 
@@ -29,7 +31,6 @@ public class ProfileActivity extends AppCompatActivity {
     TabLayout tabLayout;
     MyViewPagerAdapter myViewPagerAdapter;
     AlertDialog.Builder builder;
-
     CircleImageView profile_imageView;
     TextView username_tv;
     private DatabaseReference databaseReference;
@@ -40,15 +41,29 @@ public class ProfileActivity extends AppCompatActivity {
         setContentView(R.layout.activity_profile);
         Objects.requireNonNull(getSupportActionBar()).hide();
 
-
-
         //to get profile pic and user name
         profile_imageView = findViewById(R.id.home_profile_pic);
         username_tv = findViewById(R.id.home_username);
 
         databaseReference = FirebaseDatabase.getInstance().getReference().child("users").child(
-                Objects.requireNonNull(FirebaseAuth.getInstance().getCurrentUser()).getUid()
+               FirebaseAuth.getInstance().getCurrentUser().getUid()
         );
+//        FirebaseDatabase firebaseDatabase = FirebaseDatabase.getInstance();
+//        DatabaseReference databaseReference = firebaseDatabase.getReference();
+//        DatabaseReference getImage = databaseReference.child("users").child(
+//                FirebaseAuth.getInstance().getCurrentUser().getUid()
+//        );
+//        getImage.addListenerForSingleValueEvent(new ValueEventListener() {
+//            @Override
+//            public void onDataChange(@NonNull DataSnapshot snapshot) {
+//                String
+//            }
+//
+//            @Override
+//            public void onCancelled(@NonNull DatabaseError error) {
+//
+//            }
+//        });
 
         databaseReference.addValueEventListener(new ValueEventListener() {
             @Override
@@ -59,9 +74,13 @@ public class ProfileActivity extends AppCompatActivity {
                     String name = snapshot.child("name").getValue().toString();
                     username_tv.setText(name);
 
-                    //to get profile picture
-//                    String imageUrl = snapshot.child("profile_picture_url").getValue().toString();
-//                    Glide.with(getApplicationContext()).load(imageUrl).into(profile_imageView);
+                    if (snapshot.hasChild("profile_picture_url")){
+                        //to get profile picture
+                        String imageUrl = snapshot.child("profile_picture_url").getValue(String.class);
+                        Glide.with(getApplicationContext()).load(imageUrl).into(profile_imageView);
+                    }else{
+                        profile_imageView.setImageResource(R.drawable.profile_image);
+                    }
                 }
             }
 
