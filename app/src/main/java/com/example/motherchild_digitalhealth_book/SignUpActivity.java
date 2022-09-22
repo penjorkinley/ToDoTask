@@ -110,6 +110,9 @@ public class SignUpActivity extends AppCompatActivity {
                     cid_et.setError("CID No is required");
                     return;
                 }
+                if (cidNo.length() != 11){
+                    cid_et.setError("CID No should contain 11 digits");
+                }
                 if (TextUtils.isEmpty(date)){
                     date_et.setError("Date is required");
                     return;
@@ -133,7 +136,7 @@ public class SignUpActivity extends AppCompatActivity {
                 if (TextUtils.isEmpty(confirmPw)){
                     confirm_pw_et.setError("Confirmation password is required");
                 }
-                if (password.equals(confirmPw)){
+                if (password.equals(confirmPw) && cidNo.length() == 11 && mobileNo.length() == 8){
                     loader.setMessage("Registering...");
                     loader.setCanceledOnTouchOutside(false);
                     loader.show();
@@ -214,7 +217,7 @@ public class SignUpActivity extends AppCompatActivity {
                                                             @Override
                                                             public void onComplete(@NonNull Task task) {
                                                                 if (task.isSuccessful()){
-                                                                    Toast.makeText(SignUpActivity.this, "Image url added to database successfully", Toast.LENGTH_SHORT).show();
+                                                                    Toast.makeText(SignUpActivity.this, "Image uploaded successfully", Toast.LENGTH_SHORT).show();
                                                                 }
                                                                 else{
                                                                     Toast.makeText(SignUpActivity.this, task.getException().toString(), Toast.LENGTH_SHORT).show();
@@ -241,6 +244,12 @@ public class SignUpActivity extends AppCompatActivity {
                     });
 
 
+                }
+                else if (cidNo.length() != 11){
+                    Toast.makeText(SignUpActivity.this, "CID No should contain 11 digits", Toast.LENGTH_SHORT).show();
+                }
+                else if (mobileNo.length() != 8){
+                    Toast.makeText(SignUpActivity.this, "Mobile No should contain 8 digits", Toast.LENGTH_SHORT).show();
                 }
                 else{
                     Toast.makeText(SignUpActivity.this, "Passwords do not match", Toast.LENGTH_SHORT).show();
