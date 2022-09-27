@@ -45,25 +45,9 @@ public class ProfileActivity extends AppCompatActivity {
         profile_imageView = findViewById(R.id.home_profile_pic);
         username_tv = findViewById(R.id.home_username);
 
-        databaseReference = FirebaseDatabase.getInstance().getReference().child("users").child(
+        databaseReference = FirebaseDatabase.getInstance().getReference().child("Users").child(
                FirebaseAuth.getInstance().getCurrentUser().getUid()
         );
-//        FirebaseDatabase firebaseDatabase = FirebaseDatabase.getInstance();
-//        DatabaseReference databaseReference = firebaseDatabase.getReference();
-//        DatabaseReference getImage = databaseReference.child("users").child(
-//                FirebaseAuth.getInstance().getCurrentUser().getUid()
-//        );
-//        getImage.addListenerForSingleValueEvent(new ValueEventListener() {
-//            @Override
-//            public void onDataChange(@NonNull DataSnapshot snapshot) {
-//                String
-//            }
-//
-//            @Override
-//            public void onCancelled(@NonNull DatabaseError error) {
-//
-//            }
-//        });
 
         databaseReference.addValueEventListener(new ValueEventListener() {
             @Override
@@ -139,6 +123,7 @@ public class ProfileActivity extends AppCompatActivity {
                     public void onClick(DialogInterface dialog, int which) {
                         FirebaseAuth.getInstance().signOut();
                         startActivity(new Intent(ProfileActivity.this, LoginActivity.class));
+                        finish();
 
                     }
                 }).setNegativeButton("No", new DialogInterface.OnClickListener() {

@@ -47,7 +47,7 @@ public class EditProfile_activity extends AppCompatActivity {
         changePassword = findViewById(R.id.change_pw_btn);
         ep_logout_btn = findViewById(R.id.logout_btn);
 
-        databaseReference = FirebaseDatabase.getInstance().getReference().child("users").child(
+        databaseReference = FirebaseDatabase.getInstance().getReference().child("Users").child(
                 Objects.requireNonNull(FirebaseAuth.getInstance().getCurrentUser()).getUid()
         );
 
@@ -58,10 +58,10 @@ public class EditProfile_activity extends AppCompatActivity {
                     String name = snapshot.child("name").getValue().toString();
                     username.setText(name);
 
-                    String email = snapshot.child("email address").getValue().toString();
+                    String email = snapshot.child("email_address").getValue().toString();
                     emailAddress.setText(email);
 
-                    String phoneNum = snapshot.child("mobile No").getValue().toString();
+                    String phoneNum = snapshot.child("mobile_No").getValue().toString();
                     phoneNo.setText(phoneNum);
 
                     if (snapshot.hasChild("profile_picture_url")){

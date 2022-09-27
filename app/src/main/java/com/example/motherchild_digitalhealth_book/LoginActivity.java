@@ -17,9 +17,11 @@ import android.widget.TextView;
 import android.widget.Toast;
 
 
+import com.google.android.gms.tasks.OnCompleteListener;
 import com.google.android.gms.tasks.OnFailureListener;
 import com.google.android.gms.tasks.OnSuccessListener;
 
+import com.google.android.gms.tasks.Task;
 import com.google.firebase.auth.AuthResult;
 import com.google.firebase.auth.FirebaseAuth;
 import com.google.firebase.auth.FirebaseUser;
@@ -40,8 +42,8 @@ public class LoginActivity extends AppCompatActivity {
     private EditText email_et, password_et;
     private ProgressDialog loader;
     private FirebaseAuth mauth;
-    private FirebaseFirestore fstore;
-    private FirebaseDatabase rdb;
+    private FirebaseDatabase firebaseDatabase;
+    private DatabaseReference databaseReference;
 
     private FirebaseAuth.AuthStateListener authStateListener;
 
@@ -58,18 +60,17 @@ public class LoginActivity extends AppCompatActivity {
         loader = new ProgressDialog(this);
 
         mauth = FirebaseAuth.getInstance();
-        fstore = FirebaseFirestore.getInstance();
-        rdb = FirebaseDatabase.getInstance();
+//        firebaseDatabase = FirebaseDatabase.getInstance();
 
-        authStateListener = firebaseAuth -> {
-            FirebaseUser user = mauth.getCurrentUser();
-            if (user != null){
-                Intent intent = new Intent(LoginActivity.this, ProfileActivity.class);
-                startActivity(intent);
-                finish();
-            }
-
-        };
+//        authStateListener = firebaseAuth -> {
+//            FirebaseUser user = mauth.getCurrentUser();
+//            if (user != null){
+//                Intent intent = new Intent(LoginActivity.this, ProfileActivity.class);
+//                startActivity(intent);
+//                finish();
+//            }
+//
+//        };
 
         //to open the sign up activity
         signupLink.setOnClickListener(view -> {
@@ -110,21 +111,42 @@ public class LoginActivity extends AppCompatActivity {
                 loader.setCanceledOnTouchOutside(false);
                 loader.show();
 
-                mauth.signInWithEmailAndPassword(emailTxt, passwordTxt).addOnSuccessListener(new OnSuccessListener<AuthResult>() {
+                mauth.signInWithEmailAndPassword(emailTxt, passwordTxt)
+                        .addOnCompleteListener(this,new OnCompleteListener<AuthResult>() {
                     @Override
-                    public void onSuccess(AuthResult authResult) {
-                        Toast.makeText(LoginActivity.this, "Login Successfully", Toast.LENGTH_SHORT).show();
-                        isAdmin(authResult.getUser().getUid());
-                    }
-                }).addOnFailureListener(new OnFailureListener() {
-                    @Override
-                    public void onFailure(@NonNull Exception e) {
-                        loader.dismiss();
-                        Toast.makeText(LoginActivity.this, e.getMessage(), Toast.LENGTH_SHORT).show();
+                    public void onComplete(@NonNull Task<AuthResult> task) {
+                        if (task.isSuccessful()){
+                            FirebaseUser currentUser = FirebaseAuth.getInstance().getCurrentUser();
+                            String RegisteredUserId = currentUser.getUid();
+                            databaseReference = FirebaseDatabase.getInstance().getReference().child("Users").child(RegisteredUserId);
+
+                            databaseReference.addValueEventListener(new ValueEventListener() {
+                                @Override
+                                public void onDataChange(@NonNull DataSnapshot snapshot) {
+                                    String userType = snapshot.child("userType").getValue().toString();
+                                    Toast.makeText(LoginActivity.this, "Successfully Logged in", Toast.LENGTH_SHORT).show();
+                                    if (userType.equals("admin")){
+                                        startActivity(new Intent(LoginActivity.this, AdminActivity.class));
+
+                                    }
+                                    else{
+                                        startActivity(new Intent(LoginActivity.this, ProfileActivity.class));
+                                    }
+                                    loader.dismiss();
+                                }
+
+                                @Override
+                                public void onCancelled(@NonNull DatabaseError error) {
+
+                                }
+                            });
+                        }
+                        else{
+                            loader.dismiss();
+                            Toast.makeText(LoginActivity.this, "Incorrect Email Address or Password", Toast.LENGTH_SHORT).show();
+                        }
                     }
                 });
-
-
             }
         }
         else{
@@ -133,33 +155,17 @@ public class LoginActivity extends AppCompatActivity {
 
     }
 
-    private void isAdmin(String uid) {
-        DocumentReference df = fstore.collection("users").document(uid);
-        df.get().addOnSuccessListener(new OnSuccessListener<DocumentSnapshot>() {
-            @Override
-            public void onSuccess(DocumentSnapshot documentSnapshot) {
-                Log.d("TAG", "onSuccess" + documentSnapshot.getData());
 
-                if (documentSnapshot.getString("Admin") != null){
-                    startActivity(new Intent(LoginActivity.this, AdminActivity.class));
-                }
-                else{
-                    startActivity(new Intent(LoginActivity.this, ProfileActivity.class));
-                }
-                finish();
-            }
-        });
-    }
-
-    @Override
-    protected void onStart() {
-        super.onStart();
-        mauth.addAuthStateListener(authStateListener);
-    }
-    @Override
-    protected void onStop() {
-        super.onStop();
-        mauth.removeAuthStateListener(authStateListener);
-    }
+//    @Override
+//    protected void onStart() {
+//        super.onStart();
+//        mauth.addAuthStateListener(authStateListener);
+//    }
+//    @Override
+//    protected void onStop() {
+//        super.onStop();
+//        mauth.removeAuthStateListener(authStateListener);
+//    }
 
 }
+

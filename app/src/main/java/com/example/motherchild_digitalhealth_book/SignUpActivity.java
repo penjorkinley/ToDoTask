@@ -151,17 +151,17 @@ public class SignUpActivity extends AppCompatActivity {
                             }
                             else{
                                 String currentUserId = mAuth.getCurrentUser().getUid();
-                                databaseReference = FirebaseDatabase.getInstance().getReference().child("users").child(currentUserId);
+                                databaseReference = FirebaseDatabase.getInstance().getReference().child("Users").child(currentUserId);
                                 //to insert data into that particular node or folder
                                 //HashMap is data structure that uses key value pairs
 
                                 HashMap userInfo = new HashMap();
                                 userInfo.put("id", currentUserId);
                                 userInfo.put("name", name);
-                                userInfo.put("email address", email);
-                                userInfo.put("cid No", cidNo);
-                                userInfo.put("Date of Birth", date +"/" +month + "/" + year);
-                                userInfo.put("mobile No", mobileNo);
+                                userInfo.put("email_address", email);
+                                userInfo.put("cid_No", cidNo);
+                                userInfo.put("dob", date +"/" +month + "/" + year);
+                                userInfo.put("mobile_No", mobileNo);
                                 userInfo.put("password", password);
 
                                 databaseReference.updateChildren(userInfo).addOnCompleteListener(new OnCompleteListener() {
