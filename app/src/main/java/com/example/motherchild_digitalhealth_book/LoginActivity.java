@@ -133,6 +133,7 @@ public class LoginActivity extends AppCompatActivity {
                                         startActivity(new Intent(LoginActivity.this, ProfileActivity.class));
                                     }
                                     loader.dismiss();
+                                    finish();
                                 }
 
                                 @Override

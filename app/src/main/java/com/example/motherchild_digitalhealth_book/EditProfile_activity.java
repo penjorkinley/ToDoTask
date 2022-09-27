@@ -93,6 +93,7 @@ public class EditProfile_activity extends AppCompatActivity {
                     public void onClick(DialogInterface dialog, int which) {
                         FirebaseAuth.getInstance().signOut();
                         startActivity(new Intent(EditProfile_activity.this, LoginActivity.class));
+                        finish();
 
                     }
                 }).setNegativeButton("No", new DialogInterface.OnClickListener() {
