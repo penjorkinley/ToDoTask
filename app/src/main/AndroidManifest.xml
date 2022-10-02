@@ -17,6 +17,9 @@
         android:theme="@style/Theme.MotherChild_DigitalHealth_Book"
         tools:targetApi="31">
         <activity
+            android:name=".EducationalInfo_Homepage"
+            android:exported="false" />
+        <activity
             android:name=".babys_first_Physical_Exam"
             android:exported="false" />
         <activity

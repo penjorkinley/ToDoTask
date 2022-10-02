@@ -145,5 +145,12 @@
     <string name="mouth">Mouth</string>
 
 
+    <string name="general_advice_for_mothers">General Advice For Mothers</string>
+    <string name="birth_preparation_plan">Birth Preparation Plan</string>
+    <string name="keyinformation">Key Information For infant and Child\'s Safety</string>
+    <string name="dental">Dental Care For Children</string>
+    <string name="breastfeeding">Breastfeeding Tips</string>
+    <string name="caringnb">Caring For Newborn Child</string>
+    <string name="todo">TODO</string>
 
 </resources>
