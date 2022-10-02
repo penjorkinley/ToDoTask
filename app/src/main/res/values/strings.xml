@@ -92,4 +92,58 @@
     <string name="if_any_of_the_highlighted_questions_are_yes_provide_closer_follow_up_or_refer_as_indicated">If any of the highlighted questions are YES, provide closer follow up or refer as indicated</string>
     <string name="list_allergies">List Allergies:</string>
     <string name="list_medicines">List medicines:</string>
+
+    <string name="not_moving_equally">Not moving equally</string>
+    <string name="extra_digits_specify">Extra digits(specify)</string>
+    <string name="color">Color</string>
+    <string name="central_cyanosis">Central cyanosis</string>
+    <string name="jaundiceS">Jaundice</string>
+    <string name="Pallor">pp</string>
+    <string name="pallorrr">Pallor</string>
+    <string name="Head" />
+    <string name="head">Head</string>
+    <string name="caput">Caput</string>
+    <string name="caphalohematoma">Caphalohematoma</string>
+    <string name="microcephaly">Microcephaly</string>
+    <string name="fontanelle">Fontanelle</string>
+    <string name="bulging">Bulging</string>
+    <string name="sunken">Sunken</string>
+    <string name="cleft_lip_palate">Cleft lip/ palate</string>
+    <string name="tachypnea_over60">Tachypnea(over60)</string>
+    <string name="retractions">Retractions</string>
+    <string name="murmur">Murmur</string>
+    <string name="heartss">Heart</string>
+    <string name="erythema_discharge">Erythema/Discharge</string>
+    <string name="less_than_3_weeks">Less than 3 weeks</string>
+    <string name="distended">Distended</string>
+    <string name="genetalia">Genetalia</string>
+    <string name="ambiguous">Ambiguous</string>
+    <string name="hypospadius">Hypospadius</string>
+    <string name="undescened_testes">Undescened testes</string>
+    <string name="undescended_testes">Undescended testes</string>
+    <string name="baby_s_first_physical_exam">BABY\'S FIRST PHYSICAL EXAM:</string>
+    <string name="date">Date:</string>
+    <string name="time">Time:</string>
+    <string name="am">AM</string>
+    <string name="pm">PM</string>
+    <string name="wt">Wt:</string>
+    <string name="length">Length:</string>
+    <string name="hc">HC:</string>
+    <string name="sex">Sex:</string>
+    <string name="female">Female</string>
+    <string name="male">Male</string>
+    <string name="exam">Exam</string>
+    <string name="nl1">Nl</string>
+    <string name="abnormal_findings">Abnormal Findings</string>
+    <string name="tone_cry">Tone/cry</string>
+    <string name="floppy_weak">Floppy/Weak</string>
+    <string name="extremities">Extremities</string>
+    <string name="abdomen">Abdomen</string>
+    <string name="umbilicus">Umbilicus</string>
+    <string name="grunting">Grunting</string>
+    <string name="chest">Chest</string>
+    <string name="mouth">Mouth</string>
+
+
+
 </resources>
