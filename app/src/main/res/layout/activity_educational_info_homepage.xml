@@ -56,7 +56,7 @@
                         android:layout_marginTop="25dp"
                         android:text="@string/keyinformation"
                         android:textAlignment="center"
-                        android:textColor="#000000"
+                        android:textColor="#F1EBEB"
                         android:textSize="16sp"
                         tools:ignore="HardcodedText" />
                 </LinearLayout>
