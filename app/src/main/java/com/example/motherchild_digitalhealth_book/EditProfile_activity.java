@@ -47,8 +47,8 @@ public class EditProfile_activity extends AppCompatActivity {
         changePassword = findViewById(R.id.change_pw_btn);
         ep_logout_btn = findViewById(R.id.logout_btn);
 
-        databaseReference = FirebaseDatabase.getInstance().getReference().child("Users").child(
-                Objects.requireNonNull(FirebaseAuth.getInstance().getCurrentUser()).getUid()
+        databaseReference = FirebaseDatabase.getInstance().getReference().child("Users")
+                .child((FirebaseAuth.getInstance().getCurrentUser()).getUid()
         );
 
         databaseReference.addValueEventListener(new ValueEventListener() {
