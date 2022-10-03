@@ -1,0 +1,166 @@
+<?xml version="1.0" encoding="utf-8"?>
+<ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".MothersHealthInfo">
+
+
+    <RelativeLayout
+        android:layout_width="409dp"
+        android:layout_height="729dp"
+        tools:layout_editor_absoluteX="1dp"
+        tools:layout_editor_absoluteY="1dp"
+        android:padding="8dp">
+
+        <TextView
+            android:id="@+id/topic1"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="Health Worker's Information"
+            android:textColor="#090909"
+            android:textSize="22sp"
+            android:textStyle="bold" />
+
+        <TextView
+        android:id="@+id/nameofcenter"
+        android:layout_width="400dp"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/topic1"
+        android:ems="10"
+        android:textSize="20sp"
+            android:textColor="@color/black"
+        android:text="@string/name_of_health_center" />
+
+        <EditText
+            android:id="@+id/blank"
+            android:layout_width="400dp"
+            android:layout_height="wrap_content"
+            android:layout_below="@+id/nameofcenter"
+            android:ems="10"
+            android:inputType="textPersonName"
+            android:text="" />
+
+        <TextView
+            android:id="@+id/hcentercontno"
+            android:layout_width="400dp"
+            android:layout_height="wrap_content"
+            android:layout_below="@+id/blank"
+            android:ems="10"
+            android:textColor="@color/black"
+            android:textSize="20sp"
+            android:text="@string/home_health_center_contact_no" />
+
+        <EditText
+            android:id="@+id/blank1"
+            android:layout_width="400dp"
+            android:layout_height="wrap_content"
+            android:layout_below="@+id/hcentercontno"
+            android:ems="10"
+            android:inputType="textPersonName"
+            android:text="" />
+
+        <TextView
+            android:id="@+id/mobileno"
+            android:layout_width="400dp"
+            android:layout_height="wrap_content"
+            android:layout_below="@+id/blank1"
+            android:ems="10"
+            android:textColor="@color/black"
+            android:textSize="20sp"
+            android:text="@string/mobile_no_optional" />
+
+        <EditText
+            android:id="@+id/blank2"
+            android:layout_width="400dp"
+            android:layout_height="wrap_content"
+            android:layout_below="@+id/mobileno"
+            android:ems="10"
+            android:inputType="textPersonName"
+            android:text="" />
+
+        <TextView
+            android:id="@+id/issuedate"
+            android:layout_width="400dp"
+            android:layout_height="wrap_content"
+            android:layout_below="@+id/blank2"
+            android:ems="10"
+            android:textColor="@color/black"
+            android:textSize="20sp"
+            android:text="@string/date_issued" />
+
+        <EditText
+            android:id="@+id/blank3"
+            android:layout_width="400dp"
+            android:layout_height="wrap_content"
+            android:layout_below="@+id/issuedate"
+            android:ems="10"
+            android:inputType="textPersonName"
+            android:text="" />
+
+        <TextView
+            android:id="@+id/issuedplace"
+            android:layout_width="400dp"
+            android:layout_height="wrap_content"
+            android:layout_below="@+id/blank3"
+            android:ems="10"
+            android:textColor="@color/black"
+            android:textSize="20sp"
+            android:text="@string/place_issued" />
+
+        <EditText
+            android:id="@+id/blank4"
+            android:layout_width="400dp"
+            android:layout_height="wrap_content"
+            android:layout_below="@+id/issuedplace"
+            android:ems="10"
+            android:inputType="textPersonName"
+            android:text="" />
+
+        <TextView
+            android:id="@+id/nameofhcareprovider"
+            android:layout_width="400dp"
+            android:layout_height="wrap_content"
+            android:layout_below="@+id/blank4"
+            android:ems="10"
+            android:textColor="@color/black"
+            android:textSize="20sp"
+            android:text="Name/Designation of Health care provider:" />
+
+        <EditText
+            android:id="@+id/blank5"
+            android:layout_width="400dp"
+            android:layout_height="wrap_content"
+            android:layout_below="@+id/nameofhcareprovider"
+            android:ems="10"
+            android:inputType="textPersonName"
+            android:text="" />
+
+        <TextView
+            android:id="@+id/bmhcno"
+            android:layout_width="400dp"
+            android:layout_height="wrap_content"
+            android:layout_below="@+id/blank5"
+            android:ems="10"
+            android:textColor="@color/black"
+            android:textSize="20sp"
+            android:text="BMHC no:" />
+
+        <EditText
+            android:id="@+id/blank6"
+            android:layout_width="400dp"
+            android:layout_height="wrap_content"
+            android:layout_below="@+id/bmhcno"
+            android:ems="10"
+            android:inputType="textPersonName"
+            android:text="" />
+
+
+
+
+
+
+    </RelativeLayout>
+
+
+</ScrollView>

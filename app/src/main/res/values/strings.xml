@@ -152,5 +152,10 @@
     <string name="breastfeeding">Breastfeeding Tips</string>
     <string name="caringnb">Caring For Newborn Child</string>
     <string name="todo">TODO</string>
+    <string name="name_of_health_center">Name of Health Center:</string>
+    <string name="home_health_center_contact_no">Home Health Center Contact No:</string>
+    <string name="mobile_no_optional">Mobile No (Optional):</string>
+    <string name="date_issued">Date issued:</string>
+    <string name="place_issued">Place issued:</string>
 
 </resources>
