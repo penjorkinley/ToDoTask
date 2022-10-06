@@ -90,7 +90,7 @@
                         android:layout_width="65dp"
                         android:layout_height="65dp"
                         android:layout_marginTop="5dp"
-                        android:background="@drawable/mother_health_icon"
+                        android:background="@drawable/mothers_health_icon"
                         tools:ignore="ContentDescription" />
 
                     <TextView
@@ -260,7 +260,7 @@
                         android:layout_width="130dp"
                         android:layout_height="40dp"
                         android:layout_marginTop="25dp"
-                        android:text="Hospital location"
+                        android:text="@string/hospital_location"
                         android:textAlignment="center"
                         android:textColor="@color/white"
                         android:textSize="16sp" />

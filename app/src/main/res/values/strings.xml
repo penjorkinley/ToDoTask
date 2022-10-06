@@ -157,5 +157,6 @@
     <string name="mobile_no_optional">Mobile No (Optional):</string>
     <string name="date_issued">Date issued:</string>
     <string name="place_issued">Place issued:</string>
+    <string name="hospital_location">Hospital location</string>
 
 </resources>
