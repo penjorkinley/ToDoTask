@@ -6,6 +6,15 @@
     android:orientation="vertical"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     tools:context=".EducationalInfo_Homepage">
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Educational Information"
+        android:textSize="25sp"
+        android:textColor="@color/black"
+        android:layout_marginStart="65dp"
+        android:paddingTop="10dp"
+        />
 
     <ScrollView
         android:id="@+id/scroll_view"
@@ -16,12 +25,12 @@
         <GridLayout
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:layout_gravity="center"
+            android:layout_gravity="center_vertical"
             android:layout_marginTop="10dp"
             android:columnCount="3">
 
             <androidx.cardview.widget.CardView
-                android:id="@+id/mother_info"
+                android:id="@+id/keyInfo"
                 android:layout_width="140dp"
                 android:layout_height="170dp"
                 android:layout_row="0"
@@ -64,7 +73,7 @@
             </androidx.cardview.widget.CardView>
 
             <androidx.cardview.widget.CardView
-                android:id="@+id/motherHealth_info"
+                android:id="@+id/dentalCare"
                 android:layout_width="140dp"
                 android:layout_height="130dp"
                 android:layout_row="0"
@@ -108,7 +117,7 @@
             </androidx.cardview.widget.CardView>
 
             <androidx.cardview.widget.CardView
-                android:id="@+id/child_info"
+                android:id="@+id/breastfeedingTips"
                 android:layout_width="150dp"
                 android:layout_height="170dp"
                 android:layout_row="1"
@@ -150,7 +159,7 @@
             </androidx.cardview.widget.CardView>
 
             <androidx.cardview.widget.CardView
-                android:id="@+id/Educational_info"
+                android:id="@+id/care_newborn"
                 android:layout_width="150dp"
                 android:layout_height="170dp"
                 android:layout_row="1"
@@ -191,7 +200,7 @@
             </androidx.cardview.widget.CardView>
 
             <androidx.cardview.widget.CardView
-                android:id="@+id/healthWorker_info"
+                android:id="@+id/generalAdvice"
                 android:layout_width="150dp"
                 android:layout_height="170dp"
                 android:layout_row="2"
@@ -231,6 +240,7 @@
             </androidx.cardview.widget.CardView>
 
             <androidx.cardview.widget.CardView
+                android:id="@+id/birthPreparation"
                 android:layout_width="150dp"
                 android:layout_height="170dp"
                 android:layout_margin="10dp"
@@ -242,7 +252,6 @@
                 android:clickable="true"
                 android:foreground="?android:attr/selectableItemBackground"
                 app:cardCornerRadius="10dp"
-                android:id="@+id/about_us"
                 android:focusable="true">
 
                 <LinearLayout

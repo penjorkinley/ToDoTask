@@ -10,5 +10,6 @@ public class MothersHealthInfo extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_mothers_health_info);
+        getSupportActionBar().hide();
     }
 }

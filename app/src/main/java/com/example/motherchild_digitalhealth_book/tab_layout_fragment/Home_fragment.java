@@ -1,66 +1,104 @@
 package com.example.motherchild_digitalhealth_book.tab_layout_fragment;
 
+import android.content.DialogInterface;
+import android.content.Intent;
+import android.net.Uri;
 import android.os.Bundle;
 
+import androidx.appcompat.app.AlertDialog;
+import androidx.cardview.widget.CardView;
 import androidx.fragment.app.Fragment;
 
+import android.text.InputType;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
+import android.widget.EditText;
 
+import com.example.motherchild_digitalhealth_book.EducationalInfo_Homepage;
+import com.example.motherchild_digitalhealth_book.HeathWorkers_Info;
+import com.example.motherchild_digitalhealth_book.MothersHealthInfo;
+import com.example.motherchild_digitalhealth_book.MothersInformation;
 import com.example.motherchild_digitalhealth_book.R;
 
-/**
- * A simple {@link Fragment} subclass.
- * Use the {@link Home_fragment#newInstance} factory method to
- * create an instance of this fragment.
- */
 public class Home_fragment extends Fragment {
-
-    // TODO: Rename parameter arguments, choose names that match
-    // the fragment initialization parameters, e.g. ARG_ITEM_NUMBER
-    private static final String ARG_PARAM1 = "param1";
-    private static final String ARG_PARAM2 = "param2";
-
-    // TODO: Rename and change types of parameters
-    private String mParam1;
-    private String mParam2;
-
-    public Home_fragment() {
-        // Required empty public constructor
-    }
-
-    /**
-     * Use this factory method to create a new instance of
-     * this fragment using the provided parameters.
-     *
-     * @param param1 Parameter 1.
-     * @param param2 Parameter 2.
-     * @return A new instance of fragment Home_fragment.
-     */
-    // TODO: Rename and change types and number of parameters
-    public static Home_fragment newInstance(String param1, String param2) {
-        Home_fragment fragment = new Home_fragment();
-        Bundle args = new Bundle();
-        args.putString(ARG_PARAM1, param1);
-        args.putString(ARG_PARAM2, param2);
-        fragment.setArguments(args);
-        return fragment;
-    }
-
-    @Override
-    public void onCreate(Bundle savedInstanceState) {
-        super.onCreate(savedInstanceState);
-        if (getArguments() != null) {
-            mParam1 = getArguments().getString(ARG_PARAM1);
-            mParam2 = getArguments().getString(ARG_PARAM2);
-        }
-    }
-
+    String searchtxt;
+    View homeView;
+    CardView motherInfo_cv, motherHealth_cv, childInfo_cv, eduInfo_cv, healthWorker_cv,location_cv;
     @Override
     public View onCreateView(LayoutInflater inflater, ViewGroup container,
                              Bundle savedInstanceState) {
-        // Inflate the layout for this fragment
-        return inflater.inflate(R.layout.fragment_home_fragment, container, false);
+        homeView = inflater.inflate(R.layout.fragment_home_fragment, container, false);
+
+        motherInfo_cv = homeView.findViewById(R.id.mother_info);
+        motherHealth_cv = homeView.findViewById(R.id.motherHealth_info);
+        childInfo_cv = homeView.findViewById(R.id.child_info);
+        eduInfo_cv = homeView.findViewById(R.id.Educational_info);
+        healthWorker_cv = homeView.findViewById(R.id.healthWorker_info);
+        location_cv = homeView.findViewById(R.id.location);
+
+        motherInfo_cv.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+               startActivity(new Intent(getActivity(), MothersInformation.class));
+            }
+        });
+
+        motherHealth_cv.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                startActivity(new Intent(getActivity(), MothersHealthInfo.class));
+            }
+        });
+
+        childInfo_cv.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+            }
+        });
+
+        eduInfo_cv.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                startActivity(new Intent(getActivity(), EducationalInfo_Homepage.class));
+            }
+        });
+
+        healthWorker_cv.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                startActivity(new Intent(getActivity(), HeathWorkers_Info.class));
+            }
+        });
+
+        location_cv.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                AlertDialog.Builder mapDialog = new AlertDialog.Builder(getActivity());
+                mapDialog.setTitle("Enter the hospital's name");
+
+                final EditText searchEditTxt = new EditText(getActivity());
+                searchEditTxt.setInputType(InputType.TYPE_CLASS_TEXT);
+                mapDialog.setView(searchEditTxt);
+
+                mapDialog.setPositiveButton("Search", new DialogInterface.OnClickListener() {
+                    @Override
+                    public void onClick(DialogInterface dialogInterface, int i) {
+                        searchtxt = searchEditTxt.getText().toString();
+                        String location = "https://www.google.com/maps/search/?api=1&query="+searchtxt;
+                        Intent mapIntent = new Intent(Intent.ACTION_VIEW, Uri.parse(location));
+                        startActivity(mapIntent);
+                    }
+                });
+                mapDialog.setNegativeButton("Cancel", new DialogInterface.OnClickListener() {
+                    @Override
+                    public void onClick(DialogInterface dialogInterface, int i) {
+                        dialogInterface.cancel();
+                    }
+                });
+                mapDialog.show();
+            }
+        });
+        return homeView;
     }
 }

@@ -10,5 +10,6 @@ public class HeathWorkers_Info extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_heath_workers_info);
+        getSupportActionBar().hide();
     }
 }
